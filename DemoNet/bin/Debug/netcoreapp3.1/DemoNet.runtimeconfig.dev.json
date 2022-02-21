@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\voxua\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\voxua\\.nuget\\packages"
+    ]
+  }
+}
