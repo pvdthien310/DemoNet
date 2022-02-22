@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\WPF\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\
+C:\Users\voxua\OneDrive\Desktop\New folder\DemoNet\obj\Debug\netcoreapp3.1\
 DemoNet
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\WPF\DemoNet\DemoNet\App.xaml
-11407045341
+C:\Users\voxua\OneDrive\Desktop\New folder\DemoNet\App.xaml
+61589410724
 
-5-2103764164
-194-1495697901
-MainWindow.xaml;
+161360544397
+202-817230140
+MainWindow.xaml;ResourceXAML\MainResource.xaml;UserControls\BillControl.xaml;UserControls\HomeControl.xaml;View\HomeWindow.xaml;View\LoginWindow.xaml;
 
-True
+False
 
