@@ -4,12 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DemoNet.UserControls"
+             xmlns:userControl ="clr-namespace:DemoNet.UserControls"
              DataContext="{StaticResource BillVM}"
              mc:Ignorable="d" 
              x:Name="BillCT"
              Background="Yellow"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1400">
     <Grid>
+        <local:UserInfo></local:UserInfo>
             
     </Grid>
 </UserControl>

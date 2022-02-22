@@ -157,3 +157,9 @@ C:\Users\voxua\OneDrive\Desktop\New folder (2)\DemoNet\obj\Debug\netcoreapp3.1\D
 C:\Users\voxua\OneDrive\Desktop\New folder (2)\DemoNet\obj\Debug\netcoreapp3.1\DemoNet.dll
 C:\Users\voxua\OneDrive\Desktop\New folder (2)\DemoNet\obj\Debug\netcoreapp3.1\DemoNet.pdb
 C:\Users\voxua\OneDrive\Desktop\New folder (2)\DemoNet\obj\Debug\netcoreapp3.1\DemoNet.genruntimeconfig.cache
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\ProductInBill.g.cs
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\ProductTag.g.cs
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\UserInfo.g.cs
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\ProductInBill.baml
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\ProductTag.baml
+C:\Users\Modern 15\Documents\GitHub\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\UserControls\UserInfo.baml

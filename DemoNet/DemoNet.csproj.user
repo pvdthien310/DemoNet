@@ -13,6 +13,15 @@
     <Compile Update="UserControls\HomeControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\ProductInBill.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\ProductTag.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\UserInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\HomeWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,6 +40,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UserControls\HomeControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\ProductInBill.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\ProductTag.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\UserInfo.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\HomeWindow.xaml">

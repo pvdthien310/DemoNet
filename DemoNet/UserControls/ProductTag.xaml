@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="DemoNet.UserControls.ProductTag"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DemoNet.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="700"
+             x:Name="userControl">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MaxWidth="400" MinWidth="250"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="Black">
+            <Label Content="{Binding HeaderContent,ElementName=userControl,UpdateSourceTrigger=PropertyChanged}"  VerticalContentAlignment="Center" Padding="10" Foreground="White"/>
+        </Grid>
+        <TextBlock Text="{Binding TextBoxText,ElementName=userControl,UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" VerticalAlignment="Center" Margin="10 0 0 0" Padding="5,1"/>
+        <Image Source="{Binding ImageSource, ElementName=userControl,UpdateSourceTrigger=PropertyChanged}"  Grid.Column="1" Width="100"></Image>
+        <Button Background="Teal" Foreground="White" Margin="20 0 0 0" Grid.Column="3" Content="Thêm" Visibility="{Binding ButtonVisible, ElementName=userControl,UpdateSourceTrigger=PropertyChanged}" Command="{Binding TestCommand, ElementName=userControl,UpdateSourceTrigger=PropertyChanged}" CommandParameter="{Binding ButtonCommandParameter, ElementName=userControl,UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</UserControl>

@@ -28,7 +28,7 @@ namespace DemoNet.ViewModel
         public void Login(LoginWindow loginWindow)
         {
             //MessageBox.Show(Username + "   " + Password);
-            if (DemoNet.Database.account.FindAccountByUsernameAndPassword(Username,Password))
+            if (DemoNet.Database.account.FindAccountByUsernameAndPassword(Username.Trim(),Password))
             {
                 HomeWindow homeWindow = new HomeWindow();
                 MessageBox.Show("Đăng nhập thành công!");

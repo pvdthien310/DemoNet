@@ -6,10 +6,72 @@
              xmlns:local="clr-namespace:DemoNet.UserControls"
              DataContext="{StaticResource HomeVM}"
              mc:Ignorable="d" 
-             x:Name="HomeCT"
-             Background="Red"
-             d:DesignHeight="450" d:DesignWidth="800">
+             x:Name="mainwindow"          
+             Background="White"
+             d:DesignHeight="800" d:DesignWidth="1400">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="650"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="650"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0" CanContentScroll="True">
+            <StackPanel >
+                <Label Content="Danh sách sản phẩm" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+                <Line Width="10" Stroke="Black"></Line>
+                <ListView x:Name="lvsProduct" ItemsSource="{Binding ListProduct}" SelectedItem="{Binding Selected}" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <local:ProductTag 
+                            TestCommand="{Binding Btncommand2,ElementName= mainwindow}" 
+                            ButtonCommandParameter="{Binding}"    
+                            HeaderContent="{Binding Name}" 
+                            TextBoxText="{Binding Price,StringFormat='{}{0} VND'}" 
+                            ImageSource="{Binding ImgSource}" 
+                            ButtonContent="Thêm"  
+                            ButtonVisible="Visible"></local:ProductTag>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Column="2">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Đơn hàng" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center"></Label>
+                <local:UserInfo Width="500" Grid.Row="1" TextBoxText1="{Binding BillOwner, Mode=TwoWay}" TextBoxText2="{Binding PhoneNumber, Mode=TwoWay}"></local:UserInfo>
+                <Grid Grid.Row="2" >
+                    <ListView ItemsSource="{Binding Bill}">
+                        <ListView.ItemTemplate >
+                            <DataTemplate>
+                                <local:ProductInBill 
+                                    TestCommand="{Binding DeleteCommand,ElementName= mainwindow}" 
+                                    ButtonCommandParameter="{Binding}" AmountPr="{Binding Amount, StringFormat='{} x{0}'}" 
+                                    PricePr="{Binding Price, StringFormat='{} Đơn giá sản phẩm:{0} VND'}" 
+                                    NamePr="{Binding Name}" 
+                                    ImageSource="{Binding ImgSource}" TotalPr="{Binding Total, StringFormat='{} Tổng: {0} VND'}"></local:ProductInBill>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+                <StackPanel  Grid.Row="3" Orientation="Horizontal" >
+                    <Label Content="Tổng đơn hàng: " FontSize="20" Foreground="White" Background="Teal"></Label>
+                    <Label Content="{Binding TotalBill, StringFormat = '{}Tổng thanh toán:{0} VND'}" FontSize="20" Foreground="White" Background="Teal"></Label>
+
+                </StackPanel>
+                <Button Grid.Row="3" Height="30"  HorizontalAlignment="Right" Margin="10 10 10 10" Command="{Binding Btncommand}" Content="Thanh toán"></Button>
+
+                <!--<Button Grid.Row="4" Height="30"  HorizontalAlignment="Right" Margin="10 10 10 10" Command="{Binding Btncommand3}" Content="Test"></Button>-->
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

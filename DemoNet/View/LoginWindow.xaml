@@ -16,7 +16,11 @@
         mc:Ignorable="d"
         x:Name="LoginWD"
         DataContext="{StaticResource LoginVM}"
-        Title="LoginWindow" Height="620" Width="1000">
+        Title="LoginWindow" 
+        Height="620" 
+        Width="1000" 
+        WindowStartupLocation="CenterScreen"
+        >
     <Grid>
 
         <Grid.ColumnDefinitions>

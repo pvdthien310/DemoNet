@@ -7,12 +7,18 @@
         xmlns:local="clr-namespace:DemoNet.View"
         mc:Ignorable="d"
         x:Name="HomeWD"
+         TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         DataContext="{StaticResource MainVM}"
         xmlns:uc="clr-namespace:DemoNet.UserControls"
-        Title="HomeWindow" Height="450" Width="800">
+        Title="HomeWindow" Height="800" Width="1500"
+        WindowStartupLocation="CenterOwner"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100px"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid x:Name="grdMenu" Grid.Column="0">
