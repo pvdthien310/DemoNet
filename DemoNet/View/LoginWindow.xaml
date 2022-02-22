@@ -4,10 +4,346 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoNet.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         DataContext="{StaticResource LoginVM}"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="600" Width="1000">
     <Grid>
-        
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="140"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+              Background="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="200"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row ="0"
+                            Orientation="Horizontal">
+                    <Image Width="118"
+                           Height="72"
+                           Margin="70 0 0 0" Source="/View/240819846_451998545864852_2627778154468788654_n.png"/>
+                    <StackPanel Orientation="Vertical"
+                                VerticalAlignment="Center"
+                                Margin="-10 0 0 0">
+                        <Label
+                            FontSize="30"
+                            FontFamily="Cooper Black"
+                            Foreground="#100E17"
+                            FontWeight="UltraBlack"
+                            Margin="0 0 0 0">
+                            Flánner
+                        </Label>
+                        <Label
+                            Padding="0 0 0 10"
+                            HorizontalContentAlignment="Center"
+                            FontSize="12"
+                            FontFamily="Cooper Black"
+                            Foreground="#100E17"
+                            FontWeight="Light">
+                            Demo
+
+                        </Label>
+
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                        Margin="40,30,10,10">Tên đăng nhâp</Label>
+                    <TextBox Width="180"
+                             
+                         materialDesign:HintAssist.Hint="Username"
+                         Margin="10,15,10,20"
+                        
+                         ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                       Margin="40,30,40,10">Mật khẩu</Label>
+                    <PasswordBox
+                     Width="180"
+                     
+                     Margin="10,15,10,20"
+                 x:Name="PasswordBox"
+                 materialDesign:HintAssist.Hint="Password"
+                 materialDesign:TextFieldAssist.HasClearButton="True"
+                 materialDesign:HintAssist.HelperText="At least 12 characters" />
+                </StackPanel>
+                <Button Grid.Row="3"
+                    Height="40"
+                    Width="150"
+                    FontSize="12"   
+                    
+                    Background="#100E17"
+                    FontFamily="Segoe UI"
+                    Foreground="White"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0,20,30,0"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}" ToolTip="Resource name: MaterialDesignRaisedLightButton">Đăng nhập</Button>
+                <Grid Grid.Row="0">
+
+                </Grid>
+            </Grid>
+            <Grid  Grid.Row="1"
+              Background="#100E17"
+                   >
+                <Label
+                    FontFamily="Segeo UI"
+                    Foreground="WhiteSmoke"
+                    FontSize="15"
+                    FontWeight="Bold"
+                    VerticalContentAlignment="Center"
+                    HorizontalContentAlignment="Center">Bạn chưa có tài khoản ?</Label>
+
+            </Grid>
+
+
+        </Grid>
+        <Grid   Grid.Column="1" 
+                Background="#100E17"
+                VerticalAlignment="Bottom"
+                Height="150"
+                >
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                From="150"
+                                To="550"
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="Height">
+                            </DoubleAnimation>
+                            <ColorAnimation                               
+                                To="Teal"
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="signuplogo">
+                            </ColorAnimation>
+                            <ColorAnimation
+                                To="Teal"
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="grid2">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                From="550"
+                                To="150"
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="Height">
+
+                            </DoubleAnimation>
+                            <ColorAnimation                             
+                                To="#100E17"
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="(Grid.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="grid2"
+                                >
+                            </ColorAnimation>
+                            <ColorAnimation
+                                To="#100E17"                              
+                                Duration="0:0:01"
+                                Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                Storyboard.TargetName="signuplogo">
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Grid.Triggers>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="500"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"
+                  Background="WhiteSmoke"
+                  >
+                <Button
+                    Margin="0 30 0 0"
+                    x:Name="signuplogo"
+                    Background="#100E17"
+                    Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+                    ToolTip="MaterialDesignFloatingActionLightButton">
+                    <materialDesign:PackIcon
+                     Kind="Account"
+                     Foreground="White"
+                     Height="30"
+                     Width="30"/>
+                </Button>
+
+            </Grid>
+            <Grid Grid.Row="1"
+                  Name="grid2"
+                  
+                  Background="#100E17">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock
+                    x:Name="signuptxtblock"
+                    FontFamily="Segoe UI"
+                   
+                    FontWeight="ExtraBold"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Foreground="WhiteSmoke"
+                    >
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Text" Value="Bạn chưa có tài khoản ?" />
+                            <Setter Property="FontSize" Value="15" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=grid2, Path=IsMouseOver}" Value="True">
+                                    <Setter Property="Text" Value="Đăng kí" />
+                                    <Setter Property="FontSize" Value="20" />
+
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+
+
+                </TextBlock>
+                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                           
+                        Margin="40,30,20,10">Tên đăng nhâp</Label>
+                    <TextBox Width="180"
+                             
+                         materialDesign:HintAssist.Hint="Username"
+                         Margin="10,15,10,20"
+                        
+                         ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                           
+                        Margin="40,30,70,10">Gmail</Label>
+                    <TextBox Width="180"
+                             
+                         materialDesign:HintAssist.Hint="Gmail"
+                         Margin="10,15,10,20"
+                        
+                         ></TextBox>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                       Margin="40,30,50,10">Mật khẩu</Label>
+                    <PasswordBox
+                     Width="180"
+                     
+                     Margin="10,15,10,20"
+                 x:Name="PasswordBox1"
+                 materialDesign:HintAssist.Hint="Password"
+                 materialDesign:TextFieldAssist.HasClearButton="True"
+                 materialDesign:HintAssist.HelperText="At least 12 characters" />
+                </StackPanel>
+                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                    <Label FontFamily="Segoe UI"
+                           Height="50"
+                      FontWeight="Bold"
+                       Margin="40,30,0,10">Nhập lại Mật khẩu</Label>
+                    <PasswordBox
+                     Width="180"
+                     Margin="10,15,10,20"
+                 x:Name="PasswordBox2"
+                 materialDesign:HintAssist.Hint="Password"
+                 materialDesign:TextFieldAssist.HasClearButton="True"
+                 materialDesign:HintAssist.HelperText="At least 12 characters" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="5">
+                    <Button
+                    Height="40"
+                    Width="150"
+                    FontSize="12"   
+                    Background="#100E17"
+                    FontFamily="Segoe UI"
+                    Foreground="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="0,0,0,0"
+                    Style="{StaticResource MaterialDesignRaisedLightButton}" 
+                    ToolTip="Resource name: MaterialDesignRaisedLightButton">Đăng kí</Button>
+                </StackPanel>
+
+            </Grid>
+
+
+
+        </Grid>
+        <Grid Grid.Column="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                    <GradientStop Color="Teal" Offset="1"/>
+                    <GradientStop Color="Orange" Offset="0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Border Height="490"
+                    VerticalAlignment="Top" 
+                    CornerRadius="0 0 70 200"
+                    Background="#100E17"></Border>
+            <StackPanel Orientation="Vertical">
+                <Label Foreground="WhiteSmoke"
+                       FontSize="30"
+                       FontWeight="SemiBold"
+                       FontFamily="Segoe UI"
+                       HorizontalAlignment="Center"
+                       Margin="0 40 0 0">Chào mừng bạn đến với Flanner!</Label>
+                <Label Foreground="WhiteSmoke"
+                       FontSize="18"
+                       FontWeight="SemiBold"
+                       FontFamily="Segoe UI"
+                       HorizontalAlignment="Center"
+                       Margin="0 0 0 20">Ứng dụng tính toán tại quầy</Label>
+                <Image Source="/View/background.png" 
+                       Height="326"
+                       Width="426"
+                       VerticalAlignment="Bottom"
+                       />
+
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>
