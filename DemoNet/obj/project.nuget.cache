@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "acZyuAi+u68m6DNFbfdJ1lzIlzqRFy87CUwAoD5Ajay9P6sWrbcUm8fOnrMguOZUZhAfcyPX95yk0NSJlN/G1g==",
+  "dgSpecHash": "JLuycMnJVt3jp7ZvX2CMuXHzQfcUH2atoWqTElISE0tSTd3+Nn5jah91PUAplNoYQiADyL34iwI/5xeLuqsNqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Modern 15\\source\\repos\\DemoNet\\DemoNet\\DemoNet.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\WPF\\DemoNet\\DemoNet\\DemoNet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\materialdesigncolors\\2.0.4\\materialdesigncolors.2.0.4.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\materialdesignthemes\\4.3.0\\materialdesignthemes.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

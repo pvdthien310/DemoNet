@@ -1,18 +1,18 @@
 ﻿DemoNet
-1.0.0.0
+
 
 winexe
 C#
 .cs
-D:\WPF\DemoNet\DemoNet\obj\Debug\netcoreapp3.1\
+D:\WPF\DemoNet\DemoNet\obj\Release\netcoreapp3.1\
 DemoNet
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+TRACE;RELEASE;NETCOREAPP;NETCOREAPP3_1;
 D:\WPF\DemoNet\DemoNet\App.xaml
 11407045341
 
-5-2103764164
+3-1233169557
 194-1495697901
 MainWindow.xaml;
 
