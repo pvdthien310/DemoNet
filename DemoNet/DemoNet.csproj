@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Database\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="View\240819846_451998545864852_2627778154468788654_n.png" />
     <Resource Include="View\background.png" />
   </ItemGroup>

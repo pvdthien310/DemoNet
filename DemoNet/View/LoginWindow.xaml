@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:DemoNet.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -13,6 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
+        x:Name="LoginWD"
         DataContext="{StaticResource LoginVM}"
         Title="LoginWindow" Height="620" Width="1000">
     <Grid>
@@ -69,7 +71,7 @@
                       FontWeight="Bold"
                         Margin="40,30,10,10">Tên đăng nhâp</Label>
                     <TextBox Width="180"
-                             
+                         Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          materialDesign:HintAssist.Hint="Username"
                          Margin="10,15,10,20"
                         
@@ -82,25 +84,31 @@
                        Margin="40,30,40,10">Mật khẩu</Label>
                     <PasswordBox
                      Width="180"
-                     
                      Margin="10,15,10,20"
                  x:Name="PasswordBox"
                  materialDesign:HintAssist.Hint="Password"
                  materialDesign:TextFieldAssist.HasClearButton="True"
-                 materialDesign:HintAssist.HelperText="At least 12 characters" />
+                 materialDesign:HintAssist.HelperText="At least 12 characters" >
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="PasswordChanged">
+                                <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                                               CommandParameter="{Binding ElementName=PasswordBox}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </PasswordBox>
                 </StackPanel>
                 <Button Grid.Row="3"
                     Height="40"
                     Width="150"
-                    FontSize="12"   
-                    
+                    FontSize="12"
                     Background="#100E17"
                     FontFamily="Segoe UI"
                     Foreground="White"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Margin="0,20,30,0"
-                    Style="{StaticResource MaterialDesignRaisedLightButton}" ToolTip="Resource name: MaterialDesignRaisedLightButton">Đăng nhập</Button>
+                    Style="{StaticResource MaterialDesignRaisedLightButton}" ToolTip="Resource name: MaterialDesignRaisedLightButton"
+                    Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=LoginWD}">Đăng nhập</Button>
                 <Grid Grid.Row="0">
 
                 </Grid>
