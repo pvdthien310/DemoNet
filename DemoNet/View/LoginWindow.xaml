@@ -14,7 +14,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         DataContext="{StaticResource LoginVM}"
-        Title="LoginWindow" Height="600" Width="1000">
+        Title="LoginWindow" Height="620" Width="1000">
     <Grid>
 
         <Grid.ColumnDefinitions>
