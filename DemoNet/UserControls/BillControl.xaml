@@ -8,10 +8,44 @@
              DataContext="{StaticResource BillVM}"
              mc:Ignorable="d" 
              x:Name="BillCT"
-             Background="Yellow"
+             Background="White"
              d:DesignHeight="800" d:DesignWidth="1400">
     <Grid>
-        <local:UserInfo></local:UserInfo>
-            
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Content="Danh sách đơn hàng" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="25"></Label>
+        <Button Grid.Row="1" HorizontalAlignment="Right" Margin="10" Content="Cập nhập dữ liệu" Background="Teal" Command="{Binding LoadCommand}"></Button>
+        <ListView  Grid.Row="2" x:Name="lvsOrder" ItemsSource="{Binding ListOrder}"  >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <StackPanel Margin="10" Background="LightSlateGray">
+                        <TextBlock Margin="10" Text="{Binding Name,StringFormat='{}Tên khách hàng: {0}'}" FontSize="15" FontWeight="Bold"></TextBlock>
+                        <TextBlock Margin="10" Text="{Binding PhoneNumber,StringFormat='{}Số điện thoại: {0}'}" FontSize="15" FontWeight="Bold"></TextBlock>
+                        <ListView   ItemsSource="{Binding ListProduct}">
+                            <ListView.ItemTemplate >
+                                <DataTemplate>
+                                    <local:ProductTag 
+                            HeaderContent="{Binding Name}" 
+                            TextBoxText="{Binding Amount,StringFormat='{}x{0}'}" 
+                            ImageSource="{Binding ImgSource}" 
+                            ButtonContent="Thêm"  
+                            ButtonVisible="Hidden"></local:ProductTag>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <TextBlock Margin="10" Text="{Binding Total,StringFormat='{}Thanh toán: {0}'}" FontSize="18" FontWeight="Bold"></TextBlock>
+
+
+                    </StackPanel>
+
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
     </Grid>
 </UserControl>

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DemoNet.Model
 {
-    class OrderItem
+    class OrderItem: INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(string propertyName)

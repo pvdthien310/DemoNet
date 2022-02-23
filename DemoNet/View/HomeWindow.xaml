@@ -18,18 +18,18 @@
         >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="130"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid x:Name="grdMenu" Grid.Column="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Button x:Name="btnHome" Uid="1" >Home
+                <Button x:Name="btnHome" Background="Teal" Uid="1" Height="50" Margin="0 0 0 10" >Home
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=HomeWD}"/>
@@ -41,7 +41,7 @@
                 </Button>
             </Grid>
             <Grid Grid.Row="1">
-                <Button x:Name="btnBill" Uid="2">Bill
+                <Button x:Name="btnBill" Background="LightGreen" Height="50" Uid="2">Bill
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="Click">
                             <i:InvokeCommandAction Command="{Binding SwitchTabCommand}" CommandParameter="{Binding ElementName=HomeWD}"/>

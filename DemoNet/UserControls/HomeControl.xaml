@@ -14,27 +14,27 @@
             <ColumnDefinition Width="650"></ColumnDefinition>
             <ColumnDefinition Width="50"></ColumnDefinition>
             <ColumnDefinition Width="650"></ColumnDefinition>
-
         </Grid.ColumnDefinitions>
+
         <ScrollViewer Grid.Column="0" CanContentScroll="True">
-            <StackPanel >
+            <StackPanel>
                 <Label Content="Danh sách sản phẩm" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"></Label>
-                <Line Width="10" Stroke="Black"></Line>
                 <ListView x:Name="lvsProduct" ItemsSource="{Binding ListProduct}" SelectedItem="{Binding Selected}" >
                     <ListView.ItemTemplate >
                         <DataTemplate>
-                            <local:ProductTag 
-                            TestCommand="{Binding Btncommand2,ElementName= mainwindow}" 
+                            <StackPanel>
+                                <local:ProductTag 
+                            TestCommand="{Binding Path=DataContext.Btncommand2, RelativeSource={RelativeSource AncestorType=ListView} }" 
                             ButtonCommandParameter="{Binding}"    
                             HeaderContent="{Binding Name}" 
                             TextBoxText="{Binding Price,StringFormat='{}{0} VND'}" 
                             ImageSource="{Binding ImgSource}" 
                             ButtonContent="Thêm"  
                             ButtonVisible="Visible"></local:ProductTag>
+                            </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackPanel>
         </ScrollViewer>
 
@@ -48,15 +48,16 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Content="Đơn hàng" FontSize="20" FontWeight="Bold"  HorizontalAlignment="Center"></Label>
-                <local:UserInfo Width="500" Grid.Row="1" TextBoxText1="{Binding BillOwner, Mode=TwoWay}" TextBoxText2="{Binding PhoneNumber, Mode=TwoWay}"></local:UserInfo>
+                <local:UserInfo Width="500" Grid.Row="1" TextBoxText1="{Binding OrderOwner, Mode=TwoWay}" TextBoxText2="{Binding PhoneNumber, Mode=TwoWay}"></local:UserInfo>
                 <Grid Grid.Row="2" >
-                    <ListView ItemsSource="{Binding Bill}">
+                    <ListView ItemsSource="{Binding Order}">
                         <ListView.ItemTemplate >
                             <DataTemplate>
                                 <local:ProductInBill 
-                                    TestCommand="{Binding DeleteCommand,ElementName= mainwindow}" 
-                                    ButtonCommandParameter="{Binding}" AmountPr="{Binding Amount, StringFormat='{} x{0}'}" 
-                                    PricePr="{Binding Price, StringFormat='{} Đơn giá sản phẩm:{0} VND'}" 
+                                    TestCommand="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource AncestorType=ListView} }" 
+                                    ButtonCommandParameter="{Binding}" 
+                                    AmountPr="{Binding Amount, StringFormat='{} x {0} '}" 
+                                    PricePr="{Binding Price, StringFormat='{} Đơn giá sản phẩm : {0} VND'}" 
                                     NamePr="{Binding Name}" 
                                     ImageSource="{Binding ImgSource}" TotalPr="{Binding Total, StringFormat='{} Tổng: {0} VND'}"></local:ProductInBill>
                             </DataTemplate>
@@ -65,7 +66,7 @@
                 </Grid>
                 <StackPanel  Grid.Row="3" Orientation="Horizontal" >
                     <Label Content="Tổng đơn hàng: " FontSize="20" Foreground="White" Background="Teal"></Label>
-                    <Label Content="{Binding TotalBill, StringFormat = '{}Tổng thanh toán:{0} VND'}" FontSize="20" Foreground="White" Background="Teal"></Label>
+                    <Label Content="{Binding TotalOrder, StringFormat = '{}Tổng thanh toán:{0} VND'}" FontSize="20" Foreground="White" Background="Teal"></Label>
 
                 </StackPanel>
                 <Button Grid.Row="3" Height="30"  HorizontalAlignment="Right" Margin="10 10 10 10" Command="{Binding Btncommand}" Content="Thanh toán"></Button>

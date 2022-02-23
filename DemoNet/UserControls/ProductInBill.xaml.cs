@@ -33,8 +33,8 @@ namespace DemoNet.UserControls
                        new UIPropertyMetadata("0"));
         public static readonly DependencyProperty
                    Amountproperty = DependencyProperty.Register(
-                       "AmountPr", typeof(string), typeof(ProductInBill),
-                       new UIPropertyMetadata("0"));
+                       "AmountPr", typeof(int), typeof(ProductInBill),
+                       new UIPropertyMetadata(0));
         public static readonly DependencyProperty
                  Totalproperty = DependencyProperty.Register(
                      "TotalPr", typeof(string), typeof(ProductInBill),
@@ -80,10 +80,10 @@ namespace DemoNet.UserControls
             get { return (string)GetValue(Priceproperty); }
             set { SetValue(Priceproperty, value); }
         }
-        public string AmountPr
+        public int AmountPr
         {
             // Property này sẽ truy xuất đến DependencyProperty trên kia
-            get { return (string)GetValue(Amountproperty); }
+            get { return (int)GetValue(Amountproperty); }
             set { SetValue(Amountproperty, value); }
         }
         public string TotalPr
